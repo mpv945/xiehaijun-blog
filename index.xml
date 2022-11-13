@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>高山流水</title><link>https://www.ewancle.com/</link><description>Recent content on 高山流水</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.ewancle.com/index.xml" rel="self" type="application/rss+xml"/><item><title>自建博客（一） - 初识HUGO</title><link>https://www.ewancle.com/p/blog-1-chinese/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://www.ewancle.com/p/blog-1-chinese/</guid><description>&lt;img src="https://images.ewancle.com/blog/imghugo-what.png" alt="Featured image of post 自建博客（一） - 初识HUGO" />&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>
+&lt;meting-js
+id="1901371647"
+server="netease"
+type="song"
+auto="netease"
+fixed="false"
+mini="false"
+autoplay="true"
+theme="#2980b9"
+loop="all"
+order="list"
+preload="auto"
+volume="0.1"
+mutex="true"
+lrc-type="1"
+list-folded="false"
+>
+&lt;/meting-js>
+&lt;p>&lt;img src="https://images.ewancle.com/blog/imghugo-logo-wide.svg" alt="Hugo">&lt;/p>
+&lt;h2 id="hugo-简介">Hugo 简介&lt;/h2>
+&lt;p>在网络发达的信息时代，一直使用搜索引擎查询各种资料和跳坑的参考示例，大部分都会跳到别人博客下。有时候一篇排版井然有序，有归档有搜索的博文能带来事倍功半的效果。我以前一直使用文本，excel，word等文档记录，但是用下来发现有时候多台电脑办公很难同步，而且归档凌乱，不方便查找。感觉自己组建一个私人博客很有必要，第一用来做技术笔记，第二很符合程序员的分享精神，第三可以学习新技术。&lt;/p>
+&lt;p>目前了解下来，市面上主流的，能静态托管的开源框架有【ruby语言的&lt;a href="https://link.zhihu.com/?target=https%3A//github.com/mojombo/jekyll">jekyll&lt;/a> , nodejs语言的&lt;a href="https://link.zhihu.com/?target=https%3A//github.com/tommy351/hexo">hexo&lt;/a> , Java语言的&lt;a href="https://github.com/88250/solo">solo&lt;/a> &amp;hellip;&amp;hellip;】&lt;/p>
+&lt;p>今天我们要介绍的框架叫作&lt;a href="https://gohugo.io/getting-started/quick-start/">Hugo&lt;/a>。Hugo 是一个基于Go 语言的框架，也可以快速方便的创建自己的博客。&lt;/p>
+&lt;p>原生 Markdown 和 Emacs Org-Mode 支持，以及通过&lt;em>外部助手&lt;/em>支持的其他语言（请参阅&lt;a href="https://gohugo.io/content-management/formats/">支持的格式&lt;/a>），我们可以将自己的文章写成Markdown 的格式，放在我们用Hugo 创建的博客系统中，从而展示给他人。&lt;/p>
+&lt;h2 id="动手实践">动手实践&lt;/h2>
+&lt;h3 id="foo">安装&lt;/h3>
+&lt;p>&lt;a href="https://gohugo.io/installation/windows/#prebuilt-binaries">预构建的二进制包安装&lt;/a>：&lt;/p>
+&lt;p>预构建的二进制文件可用于各种操作系统和架构。访问&lt;a href="https://github.com/gohugoio/hugo/releases/latest">最新发布&lt;/a>页面，然后向下滚动到资产部分。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>下载所需&lt;a href="https://gohugo.io/installation/windows/#flavors">风格&lt;/a>、操作系统和架构的存档（Hugo 有两种：标准版和扩展版。扩展版支持 编码 WebP 图像 和 使用嵌入式 LibSass 转译器将 Sass 转译为 CSS。建议安装扩展版。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>&lt;a href="https://github.com/gohugoio/hugo/releases">Hugo预编 - 全平台最新版本&lt;/a>&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>hugo_0.105.0_darwin-universal.tar.gz - 标准版：苹果Mac OS系统（适用M1和X86）
+hugo_0.105.0_dragonfly-amd64.tar.gz - 标准版：*DragonFly* BSD（适用英特尔和AMD）
+hugo_0.105.0_freebsd-amd64.tar.gz - 标准版：freebsd BSD（适用英特尔和AMD）
+hugo_0.105.0_Linux-64bit.tar.gz - 标准版：通用Linux（适用英特尔和AMD）
+hugo_0.105.0_linux-amd64.deb - 标准版：Debian/Ubuntu（适用英特尔和AMD）
+hugo_0.105.0_linux-amd64.tar.gz - 标准版：通用Linux（适用英特尔和AMD）
+hugo_0.105.0_linux-arm.tar.gz - 标准版：通用Linux（ARM芯片）
+hugo_0.105.0_linux-arm64.deb - 标准版：Debian/Ubuntu（ARM芯片）
+hugo_0.105.0_linux-arm64.tar.gz - 标准版：通用Linux（ARM芯片）
+hugo_0.105.0_netbsd-amd64.tar.gz - 标准版：netbsd（适用英特尔和AMD）
+hugo_0.105.0_openbsd-amd64.tar.gz - 标准版：openbsd（适用英特尔和AMD）
+hugo_0.105.0_windows-amd64.zip - 标准版：Windows（适用英特尔和AMD）
+hugo_0.105.0_windows-arm64.zip - 标准版：Windows（ARM芯片）
+hugo_extended_0.105.0_darwin-universal.tar.gz - 扩展版：苹果Mac OS系统（适用M1和英特尔）
+hugo_extended_0.105.0_Linux-64bit.tar.gz - 扩展版：通用Linux（适用英特尔和AMD）
+hugo_extended_0.105.0_linux-amd64.deb - 扩展版：Debian/Ubuntu（适用英特尔和AMD）
+hugo_extended_0.105.0_linux-amd64.tar.gz - 扩展版：通用Linux（适用英特尔和AMD）
+hugo_extended_0.105.0_linux-arm64.deb - 扩展版：Debian/Ubuntu（ARM）
+hugo_extended_0.105.0_linux-arm64.tar.gz - 扩展版：通用Linux（ARM）
+hugo_extended_0.105.0_windows-amd64.zip - 扩展版：Windows（适用英特尔和AMD）
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>例如在Linux安装，安装相关依赖 :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt install wget git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/gohugoio/hugo/releases/download/v0.105.0/hugo_extended_0.105.0_linux-amd64.tar.gz">下载软件包&lt;/a> :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://github.com/gohugoio/hugo/releases/download/v0.105.0/hugo_extended_0.105.0_linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>解压软件包 ：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar -zxvf hugo_extended_0.105.0_linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>配置env，把解压软件的目录添加到$PATH变量后面 ：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo vi /etc/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 在文件末尾添加如下内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH=$PATH:解压目录/bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 添加完按ESC退出编辑，英文输入模式下，按住shift键输入: 打上x，最后回车就好了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">#最后让配置生效&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source /etc/profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>​&lt;/p>
+&lt;p>&lt;a href="https://gohugo.io/installation/windows/">Windows&lt;/a> 安装：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://chocolatey.org/">Chocolatey&lt;/a> 包管理工具安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>choco install hugo-extended
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://scoop.sh/">Scoop&lt;/a> 包管理工具安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>scoop install hugo-extended
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://gohugo.io/installation/macos/">macOS&lt;/a> 安装：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://brew.sh/">Homebrew&lt;/a> 包管理器安装：
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Bash" data-lang="Bash">&lt;span style="display:flex;">&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>brew install hugo&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.macports.org/">MacPorts&lt;/a> 包管理器安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo port install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://gohugo.io/installation/linux/">Linux&lt;/a> 安装：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://snapcraft.io/">Snap&lt;/a> 包管理器安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo snap install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://brew.sh/">Homebrew&lt;/a> 包管理器安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://archlinux.org/">Arch Linux&lt;/a> 系统自带包管理安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo pacman -S hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.debian.org/">Debian&lt;/a> 系统自带包管理安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://getfedora.org/">Fedora&lt;/a> 系统自带包管理安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo dnf install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.opensuse.org/">openSUSE&lt;/a> 系统自带包管理安装：&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo zypper install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="7">
+&lt;li>
+&lt;p>&lt;a href="https://getsol.us/home/">Solus&lt;/a> 系统自带包管理安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo eopkg install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://hub.docker.com/r/klakegg/hugo">Docker images&lt;/a> 容器安装：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>docker 镜像运行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>docker pull klakegg/hugo&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="测试验证">测试验证&lt;/h2>
+&lt;p>如果还没安装好，请点击&lt;a href="#foo">安装教程&lt;/a>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>上面安装告一段路，现在打开系统命令行工具，执行如下命令返回版本信息才算成功：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>% hugo -versoin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Start building sites …
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo v0.105.0+extended darwin/amd64 BuildDate=unknown
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INFO 2022/11/13 10:00:59 syncing static files to /
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 10:00:59 Search page not found. Create a page with layout: search.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 10:00:59 Archives page not found. Create a page with layout: archives.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 10:00:59 Search page not found. Create a page with layout: search.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 10:00:59 Archives page not found. Create a page with layout: archives.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>创建第一个自己的博客站点：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>% hugo new site my-first-blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 进入目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% cd my-first-blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 查看目录结构（需要用到一个工具：sudo apt-get install tree 或者 苹果系统：brew install tree&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% tree -Ca
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── archetypes 原型，定制预先配置的前言设定
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── default.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── config.toml 站点配置文件
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── content 此目录用于包含网站的所有内容
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── data 此目录用于保存Hugo生成站点时所用的配置文件。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── layouts 此目录存储.html文件作为布局模板，这些模板声明了内容视图在静态站点的呈现。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── public 此目录存储每次发布之前，编译的站点静态文件。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── static 此目录用于存放静态内容:图片、CSS、javascript等。 当构建站点时，这些静态目录内资源会被原封不动copy过去。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── themes 存在主题的目录
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>配置第三方主题&lt;a href="https://github.com/nonomal/hugo-theme-stack">hugo-theme-stack&lt;/a>&lt;/p>
+&lt;p>针对已经关联git的站点执行：&lt;del>git submodule add &lt;a href="https://github.com/CaiJimmy/hugo-theme-stack/">https://github.com/CaiJimmy/hugo-theme-stack/&lt;/a> themes/hugo-theme-stack&lt;/del>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>% git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cloning into &lt;span style="color:#a31515">&amp;#39;themes/hugo-theme-stack&amp;#39;&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>remote: Enumerating objects: 4272, &lt;span style="color:#00f">done&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>remote: Counting objects: 100% (93/93), &lt;span style="color:#00f">done&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>remote: Compressing objects: 100% (63/63), &lt;span style="color:#00f">done&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>remote: Total 4272 (delta 43), reused 69 (delta 30), pack-reused 4179
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Receiving objects: 100% (4272/4272), 1.06 MiB | 2.57 MiB/s, &lt;span style="color:#00f">done&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Resolving deltas: 100% (2712/2712), &lt;span style="color:#00f">done&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 复制安装的主题默认配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% cp -rf themes/hugo-theme-stack/exampleSite/* ./
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 备份Hugo默认的站点配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% mv config.toml config.toml.back
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 最后观察下项目目录变化（查看两层目录）tree -P *.pl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% % tree -F -L 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── LICENSE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── README.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── archetypes/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── default.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── config.toml.back
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── config.yaml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── content/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── _index.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── _index.zh-cn.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── categories/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── page/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── post/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── data/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── layouts/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── public/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── static/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── themes/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── hugo-theme-stack/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>本地运行预览&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>% hugo server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Start building sites …
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo v0.105.0+extended darwin/amd64 BuildDate=unknown
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR 2022/11/13 10:57:11 Failed to get JSON resource &lt;span style="color:#a31515">&amp;#34;https://publish.twitter.com/oembed?dnt=false&amp;amp;omit_script=true&amp;amp;url=https%3A%2F%2Ftwitter.com%2FDesignReviewed%2Fstatus%2F1085870671291310081&amp;#34;&lt;/span>: Get &lt;span style="color:#a31515">&amp;#34;https://publish.twitter.com/oembed?dnt=false&amp;amp;omit_script=true&amp;amp;url=https%3A%2F%2Ftwitter.com%2FDesignReviewed%2Fstatus%2F1085870671291310081&amp;#34;&lt;/span>: dial tcp 104.244.43.136:443: i/o timeout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>If you feel that this should not be logged as an ERROR, you can ignore it by adding this to your site config:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ignoreErrors = [&lt;span style="color:#a31515">&amp;#34;error-remote-getjson&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Error building site: &lt;span style="color:#a31515">&amp;#34;/Users/xxx/workspace/blog/my-first-blog/content/post/rich-content/index.md:1:1&amp;#34;&lt;/span>: timed out initializing value. You may have a circular loop in a shortcode, or your site may have resources that take longer to build than the &lt;span style="color:#a31515">`&lt;/span>timeout&lt;span style="color:#a31515">`&lt;/span> limit in your Hugo config file.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Built in 30094 ms
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 发现有循环依赖的页面报错。直接删除报错的文件夹&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% rm -rf content/post/rich-content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>% hugo server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Start building sites …
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo v0.105.0+extended darwin/amd64 BuildDate=unknown
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 11:00:14 Search page not found. Create a page with layout: search.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 11:00:14 Archives page not found. Create a page with layout: archives.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 11:00:14 Search page not found. Create a page with layout: search.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN 2022/11/13 11:00:14 Archives page not found. Create a page with layout: archives.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | EN | ZH-CN | AR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------------+----+-------+-----
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Pages | 42 | 17 | 20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Paginator pages | 1 | 0 | 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Non-page files | 5 | 4 | 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Static files | 0 | 0 | 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Processed images | 14 | 13 | 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Aliases | 21 | 7 | 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sitemaps | 2 | 1 | 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cleaned | 0 | 0 | 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Built in 430 ms
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Watching &lt;span style="color:#00f">for&lt;/span> changes in /Users/xiehaijun/workspace/blog/my-first-blog/{archetypes,content,data,layouts,static,themes}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Watching &lt;span style="color:#00f">for&lt;/span> config changes in /Users/xiehaijun/workspace/blog/my-first-blog/config.yaml, /Users/xiehaijun/workspace/blog/my-first-blog/themes/hugo-theme-stack/config.yaml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Environment: &lt;span style="color:#a31515">&amp;#34;development&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Serving pages from memory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Press Ctrl+C to stop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>复制上面提示的内容：http://localhost:1313/ 这就是本地运行的blog&lt;img src="https://images.ewancle.com/blog/imghugo-init-page.png" alt="初次运行的本地Blog">&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>归档</title><link>https://www.ewancle.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.ewancle.com/archives/</guid><description/></item><item><title>关于</title><link>https://www.ewancle.com/%E5%85%B3%E4%BA%8E/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ewancle.com/%E5%85%B3%E4%BA%8E/</guid><description>&lt;p>This is a test page for i18n support.&lt;/p></description></item><item><title>搜索</title><link>https://www.ewancle.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ewancle.com/search/</guid><description/></item><item><title>友情链接</title><link>https://www.ewancle.com/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ewancle.com/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>links:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - title: GitHub
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: GitHub is the world&amp;#39;s largest software development platform.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> website: https://github.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - title: TypeScript
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> website: https://www.typescriptlang.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: ts-logo-128.jpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item></channel></rss>
